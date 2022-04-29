@@ -1,0 +1,11 @@
+.trainer__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trainer__layout-trainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
