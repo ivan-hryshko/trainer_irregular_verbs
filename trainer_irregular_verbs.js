@@ -395,6 +395,7 @@ const word = document.querySelector('.trainer__layout-trainer-word')
 const myAnswer = document.querySelector('.trainer__layout-trainer-input')
 const error = document.querySelector('.trainer__layout-trainer-answer')
 const wordCounter = document.querySelector('.trainer__layout-trainer-counter')
+const devField = document.querySelector('.trainer__layout-trainer-dev_field')
 let currentWord = 0
 let isAnswerCorrect = 'true'
 let answer = 'dictionary[wordCounter].participle'
@@ -429,7 +430,9 @@ function changeWord() {
 document.addEventListener('keyup', logKey);
 function logKey(e) {
   if(e.code === 'Enter'){
+    devField.innerText = e.code
     checkAnswer()
+
   }
 }
 
