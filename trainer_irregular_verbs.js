@@ -409,6 +409,7 @@ start()
 
 function start() {
   randomizeArray()
+  checkRepeat()
   // console.log(randomWordArray)
   // console.log(dictionary)
   changeWord()
@@ -439,7 +440,6 @@ function changeWord() {
 function enterKeyPressed(event) {
   if (event.keyCode === 13) {
     console.log("Enter key is pressed");
-    devField.innerText = event.keyCode
     checkAnswer()
     return true;
   } else {
@@ -505,6 +505,23 @@ function checkEndGame() {
     alert (`Mistake: ${mistakeCounter}\nCorrect: ${correctAnswerCount}%`)
     restart()
   }
+}
+
+function checkRepeat() {
+  let repeatCount = 0
+  let repeatArray = []
+  for (const word of randomWordArray) {
+    repeatCount = 0
+    for (const wordCompare of randomWordArray) {
+      if (word === wordCompare) {
+        repeatCount += 1
+        if (repeatCount > 1) {
+          repeatArray.push(wordCompare)
+        }
+      }
+    }
+  }
+  console.log("repeat", repeatArray)
 }
 
 function restart() {
