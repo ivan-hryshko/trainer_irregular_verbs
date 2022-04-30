@@ -427,12 +427,23 @@ function changeWord() {
 
 }
 
-document.addEventListener('keyup', logKey);
-function logKey(e) {
-  if(e.code === 'Enter'){
-    devField.innerText = e.code
-    checkAnswer()
+// document.addEventListener('keyup', logKey);
+//   function logKey(e) {
+//     if(e.code === 'Enter'){
+//       devField.innerText = e.code
+//       checkAnswer()
 
+//     }
+// }
+
+function enterKeyPressed(event) {
+  if (event.keyCode === 13) {
+    console.log("Enter key is pressed");
+    devField.innerText = event.keyCode
+    checkAnswer()
+    return true;
+  } else {
+    return false;
   }
 }
 
@@ -501,6 +512,7 @@ function restart() {
   mistakeCounter = 0
   if (mistakeArray.length > 0) {
     randomWordArray = mistakeArray.slice()
+    mistakeArray = []
   } else {
     randomWordArray = dictionary.slice()
   }
