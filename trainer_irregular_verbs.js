@@ -2,45 +2,39 @@ const dictionary = [
   {
     present: 'go',
     past: 'went',
-    particle: 'gone',
-    urkaine: 'Йти'
+    participle: 'gone',
+    ukraine: 'Йти'
   },
   {
     present: 'do',
     past: 'did',
-    particle: 'done',
-    urkaine: 'робити'
+    participle: 'done',
+    ukraine: 'робити'
   },
   {
     present: 'eat',
     past: 'ate',
-    particle: 'eaten',
-    urkaine: 'їсти'
+    participle: 'eaten',
+    ukraine: 'їсти'
   },
 
 ]
 
 word = document.querySelector('.trainer__layout-trainer-word')
-myAnswer = document.querySelector('.trainer__layout-trainer-answer')
-
+myAnswer = document.querySelector('.trainer__layout-trainer-input')
+error = document.querySelector('.trainer__layout-trainer-answer')
+let wordCounter = 0
+let isAnswerCorrect = 'true'
+let answer = 'dictionary[wordCounter].participle'
 
 console.log("Hello")
 
-// answer.addEventListener('input', (event) => {
-  //   // console.log(event.target.value)
-  //   //
-    // });
-// }
 
-let isAnswerCorrect = 'true'
+changeWord()
 
-for (const word of dictionary) {
-  isAnswerCorrect = 'true'
-  word.innerText = word.present
-  while (isAnswerCorrect) {
-
-
-  }
+function changeWord() {
+  word.innerText = dictionary[wordCounter].present
+  answer = dictionary[wordCounter].participle
 
 }
 
@@ -52,13 +46,57 @@ function logKey(e) {
 }
 
 function checkAnswer() {
-  // console.log(answer)
-  console.log(answer.value)
+  console.log(myAnswer.value)
+  console.log(answer)
   if (myAnswer.value === answer) {
     isAnswerCorrect = 'false'
+    correctAnswer()
+  } else {
+    wrongAnswer()
 
   }
   // console.log(answer.event.target.value)
+
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
+async function correctAnswer() {
+  console.log("Correct")
+  error.innerText = 'Correct!'
+  error.style.color = "green";
+  await sleep(1000)
+  error.innerText = ''
+  myAnswer.value = ''
+  checkEndGame()
+}
+
+async function wrongAnswer() {
+  console.log("wrong")
+  error.innerText = answer
+  error.style.color = 'red';
+  myAnswer.value = ''
+  await sleep(2000)
+  error.innerText = ''
+
+  checkEndGame()
+
+
+}
+
+function checkEndGame() {
+  wordCounter += 1
+  if (wordCounter < dictionary.length) {
+
+    changeWord()
+
+  } else {
+
+  }
 
 }
 

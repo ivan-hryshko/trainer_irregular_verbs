@@ -1,3 +1,8 @@
+body {
+  font-size: 40px;
+
+}
+
 .trainer__layout {
   display: flex;
   flex-direction: column;
@@ -13,28 +18,26 @@
 
 .trainer__layout-trainer-question {
   font-size: 32px;
-
   margin-bottom: 8px;
 }
 
 .trainer__layout-trainer-word {
   font-size: 48px;
   margin-bottom: 24px;
-  color: green;
+  color: blue;
 
 }
 
-.trainer__layout-trainer-answer {
+.trainer__layout-trainer-input {
   margin-bottom: 16px;
   font-size: 40px;
   width: 200px;
   border-radius: 8px;
   padding-left: 8px;
 
-
 }
 
-body {
-  font-size: 40px;
-
+.trainer__layout-trainer-answer {
+  font-size: 48px;
+  margin-bottom: 24px;
 }
