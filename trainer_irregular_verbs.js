@@ -102,11 +102,9 @@ function checkEndGame() {
   } else {
     let correctAnswerCount = ((randomWordArray.length - mistakeCounter) * 100) / randomWordArray.length
     correctAnswerCount = Math.floor(correctAnswerCount)
-    alert (`Mistake: ${mistakeCounter} Correct: ${correctAnswerCount}%`)
+    alert (`Mistake: ${mistakeCounter}\nCorrect: ${correctAnswerCount}%`)
     restart()
-
   }
-
 }
 
 function restart() {
