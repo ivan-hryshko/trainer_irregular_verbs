@@ -263,75 +263,132 @@ const dictionary = [
     participle: 'seen',
     ukraine: ''
   },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  // {
-  //   present: '',
-  //   past: '',
-  //   participle: '',
-  //   ukraine: ''
-  // },
-  
-  
-
+  {
+    present: 'sell',
+    past: 'sold',
+    participle: 'sold',
+    ukraine: ''
+  },
+  {
+    present: 'send',
+    past: 'sent',
+    participle: 'sent',
+    ukraine: ''
+  },
+  {
+    present: 'shut',
+    past: 'shut',
+    participle: 'shut',
+    ukraine: ''
+  },
+  {
+    present: 'sing',
+    past: 'sang',
+    participle: 'sung',
+    ukraine: ''
+  },
+  {
+    present: 'sit',
+    past: 'sat',
+    participle: 'sat',
+    ukraine: ''
+  },
+  {
+    present: 'sleep',
+    past: 'slept',
+    participle: 'slept',
+    ukraine: ''
+  },
+  {
+    present: 'speak',
+    past: 'spoke',
+    participle: 'spoken',
+    ukraine: ''
+  },
+  {
+    present: 'spend',
+    past: 'spent',
+    participle: 'spent',
+    ukraine: ''
+  },
+  {
+    present: 'stand',
+    past: 'stood',
+    participle: 'stood',
+    ukraine: ''
+  },
+  {
+    present: 'steal',
+    past: 'stole',
+    participle: 'stolen',
+    ukraine: ''
+  },
+  {
+    present: 'swim',
+    past: 'swam',
+    participle: 'swum',
+    ukraine: ''
+  },
+  {
+    present: 'take',
+    past: 'took',
+    participle: 'taken',
+    ukraine: ''
+  },
+  {
+    present: 'teach',
+    past: 'taught',
+    participle: 'taught',
+    ukraine: ''
+  },
+  {
+    present: 'tell',
+    past: 'told',
+    participle: 'told',
+    ukraine: ''
+  },
+  {
+    present: 'think',
+    past: 'thought',
+    participle: 'thought',
+    ukraine: ''
+  },
+  {
+    present: 'throw',
+    past: 'threw',
+    participle: 'thrown',
+    ukraine: ''
+  },
+  {
+    present: 'understand',
+    past: 'understood',
+    participle: 'understood',
+    ukraine: ''
+  },
+  {
+    present: 'wake',
+    past: 'woke',
+    participle: 'woken',
+    ukraine: ''
+  },
+  {
+    present: 'wear',
+    past: 'wore',
+    participle: 'worn',
+    ukraine: ''
+  },
+  {
+    present: 'win',
+    past: 'won',
+    participle: 'won',
+    ukraine: ''
+  },
+  {
+    present: 'write',
+    past: 'wrote',
+    participle: 'written',
+    ukraine: ''
+  },
 ]
 
 const word = document.querySelector('.trainer__layout-trainer-word')
