@@ -20,12 +20,15 @@ const dictionary = [
 
 ]
 
-word = document.querySelector('.trainer__layout-trainer-word')
-myAnswer = document.querySelector('.trainer__layout-trainer-input')
-error = document.querySelector('.trainer__layout-trainer-answer')
-let wordCounter = 0
+const word = document.querySelector('.trainer__layout-trainer-word')
+const myAnswer = document.querySelector('.trainer__layout-trainer-input')
+const error = document.querySelector('.trainer__layout-trainer-answer')
+const wordCounter = document.querySelector('.trainer__layout-trainer-counter')
+let currentWord = 0
 let isAnswerCorrect = 'true'
 let answer = 'dictionary[wordCounter].participle'
+let randomWordArray = dictionary
+let mistakeCounter = 0
 
 console.log("Hello")
 
@@ -33,8 +36,9 @@ console.log("Hello")
 changeWord()
 
 function changeWord() {
-  word.innerText = dictionary[wordCounter].present
-  answer = dictionary[wordCounter].participle
+  word.innerText = randomWordArray[currentWord].present
+  answer = randomWordArray[currentWord].participle
+  wordCounter.innerText = `${currentWord + 1} of ${randomWordArray.length}`
 
 }
 
@@ -80,6 +84,7 @@ async function wrongAnswer() {
   error.innerText = answer
   error.style.color = 'red';
   myAnswer.value = ''
+  mistakeCounter += 1
   await sleep(2000)
   error.innerText = ''
 
@@ -89,15 +94,25 @@ async function wrongAnswer() {
 }
 
 function checkEndGame() {
-  wordCounter += 1
-  if (wordCounter < dictionary.length) {
+  currentWord += 1
+  if (currentWord < randomWordArray.length) {
 
     changeWord()
 
   } else {
+    let correctAnswerCount = ((randomWordArray.length - mistakeCounter) * 100) / randomWordArray.length
+    correctAnswerCount = Math.floor(correctAnswerCount)
+    alert (`Mistake: ${mistakeCounter} Correct: ${correctAnswerCount}%`)
+    restart()
 
   }
 
+}
+
+function restart() {
+  currentWord = 0
+  mistakeCounter = 0
+  changeWord()
 }
 
 
