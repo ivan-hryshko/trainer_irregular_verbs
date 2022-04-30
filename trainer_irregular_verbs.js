@@ -398,13 +398,25 @@ const wordCounter = document.querySelector('.trainer__layout-trainer-counter')
 let currentWord = 0
 let isAnswerCorrect = 'true'
 let answer = 'dictionary[wordCounter].participle'
-let randomWordArray = dictionary
+let randomWordArray = dictionary.slice()
 let mistakeCounter = 0
 
 console.log("Hello")
 
+start()
 
-changeWord()
+function start() {
+  randomizeArray()
+  console.log(randomWordArray)
+  console.log(dictionary)
+  changeWord()
+}
+
+function randomizeArray() {
+  randomWordArray.sort(function(){
+    return Math.random() - 0.5;
+  });
+}
 
 function changeWord() {
   word.innerText = randomWordArray[currentWord].present
