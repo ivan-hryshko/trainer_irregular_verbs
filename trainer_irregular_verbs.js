@@ -399,6 +399,7 @@ let currentWord = 0
 let isAnswerCorrect = 'true'
 let answer = 'dictionary[wordCounter].participle'
 let randomWordArray = dictionary.slice()
+let mistakeArray = []
 let mistakeCounter = 0
 
 console.log("Hello")
@@ -407,8 +408,8 @@ start()
 
 function start() {
   randomizeArray()
-  console.log(randomWordArray)
-  console.log(dictionary)
+  // console.log(randomWordArray)
+  // console.log(dictionary)
   changeWord()
 }
 
@@ -435,7 +436,7 @@ function logKey(e) {
 function checkAnswer() {
   console.log(myAnswer.value)
   console.log(answer)
-  if (myAnswer.value === answer) {
+  if (myAnswer.value.toLowerCase() === answer) {
     isAnswerCorrect = 'false'
     correctAnswer()
   } else {
@@ -471,6 +472,8 @@ async function wrongAnswer() {
   myAnswer.value = ''
   error.innerText = ''
 
+  mistakeArray.push(randomWordArray[currentWord])
+
   checkEndGame()
 
 
@@ -493,6 +496,11 @@ function checkEndGame() {
 function restart() {
   currentWord = 0
   mistakeCounter = 0
+  if (mistakeArray.length > 0) {
+    randomWordArray = mistakeArray.slice()
+  } else {
+    randomWordArray = dictionary.slice()
+  }
   changeWord()
 }
 
