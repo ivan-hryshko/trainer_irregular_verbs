@@ -17,6 +17,320 @@ const dictionary = [
     participle: 'eaten',
     ukraine: 'їсти'
   },
+  {
+    present: 'become',
+    past: 'became',
+    participle: 'become',
+    ukraine: ''
+  },
+  {
+    present: 'begin',
+    past: 'began',
+    participle: 'begun',
+    ukraine: ''
+  },
+  {
+    present: 'break',
+    past: 'broke',
+    participle: 'broken',
+    ukraine: ''
+  },
+  {
+    present: 'bring',
+    past: 'brought',
+    participle: 'brought',
+    ukraine: ''
+  },
+  {
+    present: 'build',
+    past: 'built',
+    participle: 'built',
+    ukraine: ''
+  },
+  {
+    present: 'buy',
+    past: 'bought',
+    participle: 'bought',
+    ukraine: ''
+  },
+  {
+    present: 'catch',
+    past: 'caught',
+    participle: 'caught',
+    ukraine: ''
+  },
+  {
+    present: 'choose',
+    past: 'chose',
+    participle: 'chosen',
+    ukraine: ''
+  },
+  {
+    present: 'come',
+    past: 'came',
+    participle: 'come',
+    ukraine: ''
+  },
+  {
+    present: 'cost',
+    past: 'cost',
+    participle: 'cost',
+    ukraine: ''
+  },
+  {
+    present: 'cut',
+    past: 'cut',
+    participle: 'cut',
+    ukraine: ''
+  },
+  {
+    present: 'drink',
+    past: 'drank',
+    participle: 'drunk',
+    ukraine: ''
+  },
+  {
+    present: 'drive',
+    past: 'drove',
+    participle: 'driven',
+    ukraine: ''
+  },
+  {
+    present: 'fall',
+    past: 'fell',
+    participle: 'fallen',
+    ukraine: ''
+  },
+  {
+    present: 'fall',
+    past: 'fell',
+    participle: 'fallen',
+    ukraine: ''
+  },
+  {
+    present: 'feel',
+    past: 'felt',
+    participle: 'felt',
+    ukraine: ''
+  },
+  {
+    present: 'find',
+    past: 'found',
+    participle: 'found',
+    ukraine: ''
+  },
+  {
+    present: 'fly',
+    past: 'flew',
+    participle: 'flown',
+    ukraine: ''
+  },
+  {
+    present: 'forget',
+    past: 'forgot',
+    participle: 'forgotten',
+    ukraine: ''
+  },
+  {
+    present: 'get',
+    past: 'got',
+    participle: 'got',
+    ukraine: ''
+  },
+  {
+    present: 'give',
+    past: 'gave',
+    participle: 'given',
+    ukraine: ''
+  },
+  {
+    present: 'grow',
+    past: 'grew',
+    participle: 'grown',
+    ukraine: ''
+  },
+  {
+    present: 'have',
+    past: 'had',
+    participle: 'had',
+    ukraine: ''
+  },
+  {
+    present: 'hear',
+    past: 'heard',
+    participle: 'heard',
+    ukraine: ''
+  },
+  {
+    present: 'hit',
+    past: 'hit',
+    participle: 'hit',
+    ukraine: ''
+  },
+  {
+    present: 'keep',
+    past: 'kept',
+    participle: 'kept',
+    ukraine: ''
+  },
+  {
+    present: 'know',
+    past: 'knew',
+    participle: 'known',
+    ukraine: ''
+  },
+  {
+    present: 'learn',
+    past: 'learnt',
+    participle: 'learnt',
+    ukraine: ''
+  },
+  {
+    present: 'leave',
+    past: 'left',
+    participle: 'left',
+    ukraine: ''
+  },
+  {
+    present: 'lend',
+    past: 'lent',
+    participle: 'lent',
+    ukraine: ''
+  },
+  {
+    present: 'let',
+    past: 'let',
+    participle: 'let',
+    ukraine: ''
+  },
+  {
+    present: 'lose',
+    past: 'lost',
+    participle: 'lost',
+    ukraine: ''
+  },
+  {
+    present: 'make',
+    past: 'made',
+    participle: 'made',
+    ukraine: ''
+  },
+  {
+    present: 'meet',
+    past: 'met',
+    participle: 'met',
+    ukraine: ''
+  },
+  {
+    present: 'pay',
+    past: 'paid',
+    participle: 'paid',
+    ukraine: ''
+  },
+  {
+    present: 'put',
+    past: 'put',
+    participle: 'put',
+    ukraine: ''
+  },
+  {
+    present: 'read',
+    past: 'read',
+    participle: 'read',
+    ukraine: ''
+  },
+  {
+    present: 'ring',
+    past: 'rang',
+    participle: 'rung',
+    ukraine: ''
+  },
+  {
+    present: 'run',
+    past: 'ran',
+    participle: 'run',
+    ukraine: ''
+  },
+  {
+    present: 'say',
+    past: 'said',
+    participle: 'said',
+    ukraine: ''
+  },
+  {
+    present: 'see',
+    past: 'saw',
+    participle: 'seen',
+    ukraine: ''
+  },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  // {
+  //   present: '',
+  //   past: '',
+  //   participle: '',
+  //   ukraine: ''
+  // },
+  
+  
 
 ]
 
@@ -83,9 +397,9 @@ async function wrongAnswer() {
   console.log("wrong")
   error.innerText = answer
   error.style.color = 'red';
-  myAnswer.value = ''
   mistakeCounter += 1
   await sleep(2000)
+  myAnswer.value = ''
   error.innerText = ''
 
   checkEndGame()
