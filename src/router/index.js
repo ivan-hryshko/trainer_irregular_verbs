@@ -7,7 +7,7 @@ const REPO_NAME = '/trainer_irregular_verbs';
 const routes = [
   {
     path: `${REPO_NAME}/past_particle`,
-    name: 'home',
+    name: 'PastParticle',
     component: HomeView,
   },
   {

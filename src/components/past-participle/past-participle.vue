@@ -43,7 +43,11 @@
       <div class="trainer__layout-trainer-submit" @click="checkAnswer">
         Submit
       </div>
-      <div class="trainer__layout-trainer-submit" @click="currentWord=randomWordArray.length-1">
+      <div
+        class="trainer__layout-trainer-submit"
+        @click="currentWord=randomWordArray.length-1"
+        style="background: gray"
+      >
         Finish game
       </div>
       <div
@@ -109,15 +113,6 @@ export default {
       answer.value = randomWordArray.value[currentWord.value].participle;
     }
 
-    // document.addEventListener('keyup', logKey);
-    //   function logKey(e) {
-    //     if(e.code === 'Enter'){
-    //       devField.innerText = e.code
-    //       checkAnswer()
-
-    //     }
-    // }
-
     function enterKeyPressed(event) {
       if (event.keyCode === 13) {
         console.log('Enter key is pressed');
@@ -164,7 +159,7 @@ export default {
       await sleep(2000);
       answerStyle.value.display = 'none'
       myAnswer.value = '';
-      mistakeArray.value.push(randomWordArray.value[currentWord]);
+      mistakeArray.value.push(randomWordArray.value[currentWord.value]);
       checkEndGame();
     }
 
@@ -198,10 +193,17 @@ export default {
     }
 
     function restart() {
+      console.log('in restart')
+      console.log(mistakeArray.value)
+
       currentWord.value = 0;
       mistakeCounter.value = 0;
+      if (mistakeArray.value.length > 0) {
+        randomWordArray.value = mistakeArray.value.slice();
+      } else {
+        randomizeArray()
+      }
       mistakeArray.value = [];
-      randomizeArray()
       changeWord();
     }
 
