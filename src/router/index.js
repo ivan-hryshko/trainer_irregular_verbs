@@ -1,14 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
+const REPO_NAME = '/trainer_irregular_verbs';
+
 const routes = [
   {
-    path: '/',
+    path: `${REPO_NAME}`,
     name: 'home',
     component: HomeView,
   },
   {
-    path: '/about',
+    path: `${REPO_NAME}/about`,
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
