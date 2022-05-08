@@ -50,7 +50,7 @@ body {
   width: 300px;
   border-radius: 8px;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  background: gray;
+  background: #15c39a;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -72,7 +72,7 @@ body {
 
 .progress-bar-striped {
   background-image: linear-gradient(45deg,hsla(0,0%,100%,.15) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15) 75%,transparent 0,transparent);
-  background-size: 1rem 1rem;
+  background-size: 16px 16px;
 }
 
 .progress-bar {
@@ -88,4 +88,14 @@ body {
 .progress, .progress-bar {
   display: flex;
   overflow: hidden;
+}
+
+.progress {
+  height: 16px;
+  font-size: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
 }
