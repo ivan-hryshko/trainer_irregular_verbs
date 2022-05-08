@@ -1,0 +1,33 @@
+.choose-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.choose-text {
+  margin-bottom: 16px;
+
+}
+
+.choose-choose {
+  display: flex;
+  margin-bottom: 16px;
+  width: 400px;
+
+  div {
+    display: flex;
+  }
+
+}
+
+.choose-submit {
+  margin-bottom: 16px;
+  width: 300px;
+  border-radius: 8px;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  background: #15c39a;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}

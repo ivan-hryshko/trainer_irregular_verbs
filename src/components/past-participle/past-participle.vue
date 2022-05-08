@@ -36,11 +36,15 @@
           class="trainer__layout-trainer-input"
           v-model="myAnswer"
           id="trainer-input"
+          v-on:keyup.enter="checkAnswer"
         >
       </label>
           <!-- onkeypress="enterKeyPressed(event)" -->
       <div class="trainer__layout-trainer-submit" @click="checkAnswer">
         Submit
+      </div>
+      <div class="trainer__layout-trainer-submit" @click="currentWord=randomWordArray.length-1">
+        Finish game
       </div>
       <div
         class="trainer__layout-trainer-answer"
@@ -98,6 +102,7 @@ export default {
 
     function randomizeArray() {
       randomWordArray.value.sort(() => Math.random() - 0.5);
+      randomWordArray.value = randomWordArray.value.slice(0, 20)
     }
 
     function changeWord() {
@@ -195,12 +200,8 @@ export default {
     function restart() {
       currentWord.value = 0;
       mistakeCounter.value = 0;
-      if (mistakeArray.value.length > 0) {
-        randomWordArray.value = mistakeArray.value.slice();
-        mistakeArray.value = [];
-      } else {
-        randomWordArray.value = wordsArray.slice();
-      }
+      mistakeArray.value = [];
+      randomizeArray()
       changeWord();
     }
 

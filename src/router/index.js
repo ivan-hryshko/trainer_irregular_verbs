@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import ChooseTraining from '../components/choose-training';
 
 const REPO_NAME = '/trainer_irregular_verbs';
 
 const routes = [
   {
-    path: `${REPO_NAME}`,
+    path: `${REPO_NAME}/past_particle`,
     name: 'home',
     component: HomeView,
+  },
+  {
+    path: `${REPO_NAME}`,
+    name: 'choose',
+    component: ChooseTraining,
   },
   {
     path: `${REPO_NAME}/about`,
