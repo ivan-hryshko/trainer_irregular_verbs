@@ -11,6 +11,7 @@
         <span class="trainer__layout-trainer-question">
         </span>
       <div class="trainer__layout-trainer-counter">
+        {{ currentWord + 1 }} of {{ randomWordArray.length }}
 
       </div>
       <div class="progress">
@@ -26,20 +27,26 @@
         </div>
       </div>
       <div class="trainer__layout-trainer-word">
+        {{ randomWordArray[currentWord].present }}
 
       </div>
       <label for="trainer-input">
         <input
           type="text"
           class="trainer__layout-trainer-input"
-          onkeypress="enterKeyPressed(event)"
+          v-model="myAnswer"
           id="trainer-input"
         >
       </label>
-      <div class="trainer__layout-trainer-submit" onclick="checkAnswer()">
+          <!-- onkeypress="enterKeyPressed(event)" -->
+      <div class="trainer__layout-trainer-submit" @click="checkAnswer">
         Submit
       </div>
-      <div class="trainer__layout-trainer-answer">
+      <div
+        class="trainer__layout-trainer-answer"
+        :style="answerStyle"
+      >
+        {{ answer }}
 
       </div>
       <div class="trainer__layout-trainer-dev_field">
@@ -52,7 +59,8 @@
 </template>
 
 <script>
-import dictionary from "../../json/dictionary.json";
+import wordsArray from "../../json/dictionary.json";
+import { onMounted, computed, ref } from 'vue'
 
 export default {
   name: 'PastParticiple',
@@ -62,35 +70,38 @@ export default {
     // const error = document.querySelector('.trainer__layout-trainer-answer');
     // const wordCounter = document.querySelector('.trainer__layout-trainer-counter');
     // const devField = document.querySelector('.trainer__layout-trainer-dev_field');
-    // let currentWord = 0;
-    // let isAnswerCorrect = 'true';
-    // let answer = 'dictionary[wordCounter].participle';
-    // let randomWordArray = wordsArray.slice();
-    // let mistakeArray = [];
-    // let mistakeCounter = 0;
 
-    console.log('Hello');
-    console.log(dictionary[0]);
+    let randomWordArray = ref(wordsArray.slice())
+    let currentWord = ref(0)
+    let mistakeCounter = ref(0)
+    let mistakeArray = ref([])
+    let myAnswer = ref('')
+    let answer = ref('')
+    let answerColor = ref('')
+    let isAnswerCorrect = ref('false')
+    let answerStyle = ref({
+      color: 'red',
+      display: 'none'
+    })
 
-    // start();
 
+    start();
 
     function start() {
+      console.log('Hello');
       randomizeArray();
-      checkRepeat();
-      // console.log(randomWordArray)
-      // console.log(dictionary)
+      // checkRepeat();
+      console.log(wordsArray)
+      console.log(randomWordArray.value)
       changeWord();
     }
 
     function randomizeArray() {
-      randomWordArray.sort(() => Math.random() - 0.5);
+      randomWordArray.value.sort(() => Math.random() - 0.5);
     }
 
     function changeWord() {
-      word.innerText = randomWordArray[currentWord].present;
-      answer = randomWordArray[currentWord].participle;
-      wordCounter.innerText = `${currentWord + 1} of ${randomWordArray.length}`;
+      answer.value = randomWordArray.value[currentWord.value].participle;
     }
 
     // document.addEventListener('keyup', logKey);
@@ -112,9 +123,9 @@ export default {
     }
 
     function checkAnswer() {
-      console.log(myAnswer.value);
-      console.log(answer);
-      if (myAnswer.value.toLowerCase() === answer) {
+      console.log('My: ', myAnswer.value)
+      console.log('ans: ', answer.value)
+      if (myAnswer.value.toLowerCase() === answer.value) {
         isAnswerCorrect = 'false';
         correctAnswer();
       } else {
@@ -131,36 +142,35 @@ export default {
 
     async function correctAnswer() {
       console.log('Correct');
-      error.innerText = 'Correct!';
-      error.style.color = 'green';
+      answer.value = 'Correct!';
+      answerStyle.value.color = 'green';
+      answerStyle.value.display = 'block'
       await sleep(1000);
-      error.innerText = '';
+      answerStyle.value.display = 'none'
       myAnswer.value = '';
       checkEndGame();
     }
 
     async function wrongAnswer() {
       console.log('wrong');
-      error.innerText = answer;
-      error.style.color = 'red';
-      mistakeCounter += 1;
+      mistakeCounter.value += 1;
+      answerStyle.value.color = 'red';
+      answerStyle.value.display = 'block'
       await sleep(2000);
+      answerStyle.value.display = 'none'
       myAnswer.value = '';
-      error.innerText = '';
-
-      mistakeArray.push(randomWordArray[currentWord]);
-
+      mistakeArray.value.push(randomWordArray.value[currentWord]);
       checkEndGame();
     }
 
     function checkEndGame() {
-      currentWord += 1;
-      if (currentWord < randomWordArray.length) {
+      currentWord.value += 1;
+      if (currentWord.value < randomWordArray.value.length) {
         changeWord();
       } else {
-        let correctAnswerCount = ((randomWordArray.length - mistakeCounter) * 100) / randomWordArray.length;
+        let correctAnswerCount = ((randomWordArray.value.length - mistakeCounter.value) * 100) / randomWordArray.value.length;
         correctAnswerCount = Math.floor(correctAnswerCount);
-        alert(`Mistake: ${mistakeCounter}\nCorrect: ${correctAnswerCount}%`);
+        alert(`Mistake: ${mistakeCounter.value}\nCorrect: ${correctAnswerCount}%`);
         restart();
       }
     }
@@ -183,15 +193,26 @@ export default {
     }
 
     function restart() {
-      currentWord = 0;
-      mistakeCounter = 0;
-      if (mistakeArray.length > 0) {
-        randomWordArray = mistakeArray.slice();
-        mistakeArray = [];
+      currentWord.value = 0;
+      mistakeCounter.value = 0;
+      if (mistakeArray.value.length > 0) {
+        randomWordArray.value = mistakeArray.value.slice();
+        mistakeArray.value = [];
       } else {
-        randomWordArray = wordsArray.slice();
+        randomWordArray.value = wordsArray.slice();
       }
       changeWord();
+    }
+
+    return {
+      randomWordArray,
+      currentWord,
+      myAnswer,
+      enterKeyPressed,
+      checkAnswer,
+      answerColor,
+      answer,
+      answerStyle,
     }
 
   }
