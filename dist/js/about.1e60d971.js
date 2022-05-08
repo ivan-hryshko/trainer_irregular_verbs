@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktrainer_irregular_verbs"]=self["webpackChunktrainer_irregular_verbs"]||[]).push([[443],{7381:function(r,e,n){n.r(e),n.d(e,{default:function(){return b}});var a=n(3396);const u={class:"about"},t=(0,a._)("h1",null,"This is an about page",-1),s=[t];function i(r,e){return(0,a.wg)(),(0,a.iD)("div",u,s)}var c=n(89);const l={},o=(0,c.Z)(l,[["render",i]]);var b=o}}]);
+//# sourceMappingURL=about.1e60d971.js.map
