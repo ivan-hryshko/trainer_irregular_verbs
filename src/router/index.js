@@ -2,21 +2,26 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import ChooseTraining from '../components/choose-training';
 
-const REPO_NAME = '/trainer_irregular_verbs';
+// const REPO_NAME = '/trainer_irregular_verbs';
 
 const routes = [
   {
-    path: `${REPO_NAME}/past_particle`,
+    path: `/past_particle`,
     name: 'PastParticle',
     component: HomeView,
   },
   {
-    path: `${REPO_NAME}`,
+    path: ``,
     name: 'choose',
     component: ChooseTraining,
   },
   {
-    path: `${REPO_NAME}/about`,
+    path: `/`,
+    name: 'choose',
+    component: ChooseTraining,
+  },
+  {
+    path: `/about`,
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
