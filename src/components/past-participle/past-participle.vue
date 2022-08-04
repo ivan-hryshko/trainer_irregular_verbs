@@ -33,10 +33,10 @@
       <label for="trainer-input">
         <input
           type="text"
-          class="trainer__layout-trainer-input"
+          :class="inputClassOptions"
           v-model="myAnswer"
           id="trainer-input"
-          v-on:keyup.enter="checkAnswer"
+          @keyup.enter="checkAnswer"
         >
       </label>
           <!-- onkeypress="enterKeyPressed(event)" -->
@@ -79,17 +79,26 @@ export default {
     // const wordCounter = document.querySelector('.trainer__layout-trainer-counter');
     // const devField = document.querySelector('.trainer__layout-trainer-dev_field');
 
-    let randomWordArray = ref(wordsArray.slice())
-    let currentWord = ref(0)
-    let mistakeCounter = ref(0)
-    let mistakeArray = ref([])
-    let myAnswer = ref('')
-    let answer = ref('')
-    let answerColor = ref('')
-    let isAnswerCorrect = ref('false')
-    let answerStyle = ref({
+    const randomWordArray = ref(wordsArray.slice())
+    const currentWord = ref(0)
+    const mistakeCounter = ref(0)
+    const mistakeArray = ref([])
+    const myAnswer = ref('')
+    const answer = ref('')
+    const answerColor = ref('')
+    const isAnswerCorrect = ref('false')
+    const isShowMistakeAnimation = ref(false)
+    const isShowCorrectAnimation = ref(false)
+    const answerStyle = ref({
       color: 'red',
       display: 'none'
+    })
+    const inputClassOptions = computed(() => {
+      return {
+        'trainer__layout-trainer-input': true,
+        'mistake_animation': isShowMistakeAnimation.value,
+        'correct_answer_animation': isShowCorrectAnimation.value,
+      }
     })
 
 
@@ -126,7 +135,7 @@ export default {
       console.log('My: ', myAnswer.value)
       console.log('ans: ', answer.value)
       if (myAnswer.value.toLowerCase() === answer.value) {
-        isAnswerCorrect = 'false';
+        isAnswerCorrect.value = 'false';
         correctAnswer();
       } else {
         wrongAnswer();
@@ -145,7 +154,9 @@ export default {
       answer.value = 'Correct!';
       answerStyle.value.color = 'green';
       answerStyle.value.display = 'block'
+      isShowCorrectAnimation.value = true
       await sleep(1000);
+      isShowCorrectAnimation.value = false
       answerStyle.value.display = 'none'
       myAnswer.value = '';
       checkEndGame();
@@ -156,7 +167,9 @@ export default {
       mistakeCounter.value += 1;
       answerStyle.value.color = 'red';
       answerStyle.value.display = 'block'
+      isShowMistakeAnimation.value = true
       await sleep(2000);
+      isShowMistakeAnimation.value = false
       answerStyle.value.display = 'none'
       myAnswer.value = '';
       mistakeArray.value.push(randomWordArray.value[currentWord.value]);
@@ -208,14 +221,15 @@ export default {
     }
 
     return {
-      randomWordArray,
-      currentWord,
-      myAnswer,
-      enterKeyPressed,
-      checkAnswer,
-      answerColor,
       answer,
+      myAnswer,
+      currentWord,
+      answerColor,
       answerStyle,
+      randomWordArray,
+      inputClassOptions,
+      checkAnswer,
+      enterKeyPressed,
     }
 
   }

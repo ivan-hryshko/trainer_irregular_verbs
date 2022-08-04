@@ -28,4 +28,8 @@ nav {
     }
   }
 }
+
+p {
+  margin: 0px;
+}
 </style>
