@@ -48,6 +48,7 @@
 
 .choose-submit {
   margin-bottom: 16px;
+  padding: 8px 0px;
   width: 300px;
   border-radius: 8px;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -55,4 +56,8 @@
   color: white;
   text-align: center;
   cursor: pointer;
+}
+
+.choose-submit:hover {
+  background: #0c8e70;
 }

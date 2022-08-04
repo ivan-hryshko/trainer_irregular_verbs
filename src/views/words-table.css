@@ -1,0 +1,20 @@
+words-table:nth-child(2n) {
+  background: lime;
+}
+
+.words-table__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 800px;
+  margin: auto;
+  margin-bottom: 8px;
+}
+.words-table__row:nth-child(2n) .words-table__item {
+  background-color: #7bdcc5;
+}
+
+.words-table__item {
+  color: white;
+  background-color: #51b69e;
+  margin: 0px 4px;
+}
